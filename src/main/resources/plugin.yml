@@ -1,0 +1,19 @@
+name: kBoosters
+version: '${project.version}'
+main: ro.kmagic.kboosters.Boosters
+depend: [ PlaceholderAPI ]
+softdepend: [ BedWars1058, UltraSkyWars, TheBridge, BuildBattle, SpeedBuilders, SkyMines, RoyaleEconomy, ShopGUIPlus, Jobs, KitBattle ]
+authors: [ kMagic ]
+description: Player & Network boosters
+
+commands:
+  boosters:
+    permission: boosters.use
+
+permissions:
+  boosters.use:
+    description: "Allow user to use booster commands"
+    default: true
+  boosters.admin:
+    description: "Allow user to use booster admin commands"
+    default: op

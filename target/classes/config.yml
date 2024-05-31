@@ -1,0 +1,163 @@
+server: SkyWars
+
+mysql:
+  hostname: "localhost"
+  port: "3306"
+  database: "test"
+  username: "root"
+  password: "root"
+  minimum-connections: 10
+  maximum-connections: 10
+  connection-timeout: 5000
+  properties:
+    useSSL: false
+    serverTimezone: "Europe/Bucharest"
+
+placeholderapi:
+  active-booster:
+  - "&aCoins Multiplier: &e%multiplier%"
+  - "&8> Network Booster by &b%player%"
+  inactive-booster: "&f"
+
+messages:
+  help-message:
+    - "&r     &e&lkBoosters &8| &fVersion &61.0"
+    - "&r"
+    - "&8* &e/boosters give <player> <duration> <id> &8- &7Give the player a booster"
+    - "&8* &e/boosters remove <player> <id> &8- &7Remove a player's booster"
+    - "&8* &e/boosters reset <player> &8- &7Reset a player's boosters"
+    - "&8* &e/boosters create <id> <multiplier> <personal/network> <server> <name> &8- &7Create a new booster type"
+    - "&8* &e/boosters reload &8- &7Reload the plugin's configuration"
+    - "&r"
+  # general errors
+  player-not-online: "&8» &cThis player is not online!"
+  booster-invalid: "&8» &cThe provided Booster ID is invalid."
+  duration-too-short: "&8» &cBooster duration is too short!"
+  player-not-valid: "&8» &cThis player cannot be found in the database!"
+  no-boosters: "&8» &cYou don't have any boosters."
+  # give command
+  give-usage: "&8» &fUsage: &e/boosters give <player> <duration> <id>"
+  booster-added-successfully: "&8» &aBooster given successfully."
+  # remove command
+  remove-usage: "&8» &fUsage: &e/boosters remove <player> <id>"
+  booster-removed-successfully: "&8» &aBooster removed successfully."
+  booster-not-found: "&8» &cCould not remove booster. Player doesn't have a booster with that ID."
+  # reset command
+  reset-usage: "&8» &fUsage: &e/boosters reset <player>"
+  player-reset-successfully: "&8» &aPlayer was reset successfully."
+  # create command
+  create-usage: "&8» &fUsage: &e/boosters create <id> <multiplier> <personal/network> <server> <name>"
+  booster-type-invalid: "&8» &cThe provided Booster Type is invalid."
+  booster-created-successfully: "&8» &aBooster created successfully."
+  # delete command
+  delete-usage: "&8» &fUsage: &e/boosters delete <id>"
+  booster-deleted-successfully: "&8» &aBooster deleted successfully."
+  # list command
+  no-booster-types: "&8» &cThere are no Booster Types available."
+  booster-list-format: "&8» &a{id}&8: &r{name} &ex{multiplier} &8- &e{type} &8(&a{server}&8)"
+  # reload command
+  reloaded: "&8» &aReloaded successfully."
+  # booster messages
+  network-booster-already-active: "&8» &cA Network Booster is already active on this server!"
+  booster-already-active: "&8» &cYou already have a Booster activated on this server!"
+  booster-expired: "&8» &c&lONE OF YOUR BOOSTERS JUST EXPIRED!"
+  booster-activated: "&8» &aBooster activated successfully!"
+  server-not-correct: "&8» &cThis booster cannot be activated on this server!"
+
+
+main-menu:
+  title: "Boosters"
+  rows: 4
+  personal:
+    name: "&aPersonal Boosters"
+    id: 340
+    slot: 12
+    lore:
+      - "&7Gives a bonus coin"
+      - "&7multiplier in all games for"
+      - "&7a short amount of time."
+      - "&r"
+      - "&eClick to see available"
+      - "&epersonal boosters!"
+  network:
+    name: "&cNetwork Boosters"
+    id: 130
+    slot: 16
+    lore:
+      - "&7Gives &bEVERYONE &7a"
+      - "&7bonus coin multiplier in a"
+      - "&7specific game, or in all."
+      - "&7games!"
+      - "&r"
+      - "&eClick to see your"
+      - "&eavailable Network Boosters!"
+  back:
+    enabled: false
+    name: "&cExit Menu"
+    id: 262
+    slot: 32
+
+
+personal-boosters-menu:
+  title: "Booster"
+  rows: 4
+  items-name: "&d{name} &f- &ex{multiplier} Coins"
+  items-id: 373
+  items-lore:
+    - "&aClick to activate this booster!"
+  booster-active-name: "&c{name} &f- &ex{multiplier} Coins"
+  booster-active-id: 373
+  booster-active-lore:
+    - "&cThis booster will expire in: {duration}"
+  back:
+    enabled: true
+    name: "&aGo Back"
+    id: 262
+    lore:
+      - "&7To Boosters"
+  previous:
+    name: "&cPrevious page"
+    id: 339
+  next:
+    name: "&aNext Page"
+    id: 339
+
+network-boosters-menu:
+  title: "Booster"
+  rows: 4
+  items-name: "&d{name} &f- &ex{multiplier} Coins"
+  items-id: 373
+  items-lore:
+    - "&aClick to activate this booster!"
+  booster-active-name: "&c{name} &f- &ex{multiplier} Coins"
+  booster-active-id: 373
+  booster-active-lore:
+    - "&cThis booster will expire in: {duration}"
+  back:
+    enabled: true
+    name: "&aGo Back"
+    id: 262
+    lore:
+      - "&7To Boosters"
+  previous:
+    name: "&cPrevious page"
+    id: 339
+  next:
+    name: "&aNext Page"
+    id: 339
+
+time-format:
+  year: "year"
+  years: "years"
+  week: "week"
+  weeks: "weeks"
+  day: "day"
+  days: "days"
+  hour: "hour"
+  hours: "hours"
+  minute: "minute"
+  minutes: "minutes"
+  second: "second"
+  seconds: "seconds"
+
+
